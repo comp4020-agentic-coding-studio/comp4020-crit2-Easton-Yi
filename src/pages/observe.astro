@@ -1,0 +1,91 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ActionCard from "../components/ActionCard.astro";
+import ActivityCard from "../components/ActivityCard.astro";
+import SourceNote from "../components/SourceNote.astro";
+import { ACTIVITIES } from "../data/activities";
+import { CAS_SOURCES } from "../data/sources";
+---
+
+<BaseLayout
+  title="Observe | Canberra Astronomical Society — Student Redesign"
+  description="The different ways CAS engages with the night sky — public stargazing, monthly meetings, members' dark-sky nights and outreach — with a link to the official calendar for current dates."
+  active="observe"
+>
+  <div class="container section">
+    <h1>Ways to observe with CAS</h1>
+    <p class="prose">
+      CAS engages with the night sky in a few distinct ways, some open to
+      anyone and some reserved for members. This page explains the
+      difference — for exact dates, the official calendar is always the
+      source to check.
+    </p>
+  </div>
+
+  <section class="container section">
+    <h2>Activities</h2>
+    <div class="cards-grid">
+      {ACTIVITIES.map((activity) => <ActivityCard {...activity} />)}
+    </div>
+  </section>
+
+  <section class="container section">
+    <h2>Choose your next step</h2>
+    <div class="cards-grid">
+      <ActionCard
+        title="New to CAS?"
+        description="Start with a low-pressure first step and see what to expect before you come along."
+        href="start-here.html"
+        linkLabel="Start here"
+      />
+      <ActionCard
+        title="Ready to join?"
+        description="See membership benefits and the official joining process."
+        href="about.html"
+        linkLabel="About & Join"
+      />
+      <ActionCard
+        title="School or community group?"
+        description="CAS's outreach reaches schools and community groups — get in touch to enquire."
+        href={CAS_SOURCES.contact}
+        linkLabel="Contact CAS"
+      />
+    </div>
+  </section>
+
+  <section class="section before-you-go">
+    <div class="container">
+      <p class="meta-label">Before you go</p>
+      <h2>Check conditions and confirm details</h2>
+      <p class="prose">
+        Astronomy activities depend on weather and can change at short
+        notice. Check current official information rather than relying on
+        this page alone.
+      </p>
+      <p>
+        <SourceNote href={CAS_SOURCES.calendar}>Official calendar</SourceNote>
+        · <SourceNote href={CAS_SOURCES.outreach}>Outreach page</SourceNote>
+      </p>
+    </div>
+  </section>
+
+  <section class="container section calendar-cta">
+    <a class="button button-primary" href={CAS_SOURCES.calendar} rel="noopener">
+      Check the official CAS calendar<span class="external-link-icon" aria-hidden="true">↗</span>
+    </a>
+  </section>
+</BaseLayout>
+
+<style>
+  .section {
+    padding-block: var(--space-section);
+  }
+
+  .before-you-go {
+    background: var(--surface-navy);
+  }
+
+  .calendar-cta {
+    text-align: center;
+  }
+</style>

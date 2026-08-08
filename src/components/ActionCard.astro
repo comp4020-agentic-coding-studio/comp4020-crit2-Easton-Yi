@@ -6,12 +6,15 @@ interface Props {
   linkLabel: string;
 }
 const { title, description, href, linkLabel } = Astro.props;
+const isExternal = href.startsWith("http");
 ---
 
 <article class="action-card">
   <h3>{title}</h3>
   <p>{description}</p>
-  <a class="action-card-link" href={href}>{linkLabel}</a>
+  <a class="action-card-link" href={href} rel={isExternal ? "noopener" : undefined}>
+    {linkLabel}{isExternal && <span class="external-link-icon" aria-hidden="true">↗</span>}
+  </a>
 </article>
 
 <style>

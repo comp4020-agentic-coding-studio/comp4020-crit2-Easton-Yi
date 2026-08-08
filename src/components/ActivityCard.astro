@@ -1,0 +1,41 @@
+---
+import SourceNote from "./SourceNote.astro";
+
+interface Props {
+  title: string;
+  audience: string;
+  description: string;
+  officialUrl: string;
+  availability: string;
+}
+const { title, audience, description, officialUrl, availability } = Astro.props;
+---
+
+<article class="activity-card">
+  <p class="meta-label">{audience}</p>
+  <h3>{title}</h3>
+  <p>{description}</p>
+  <p class="activity-card-availability">{availability}</p>
+  <SourceNote href={officialUrl}>Official details</SourceNote>
+</article>
+
+<style>
+  .activity-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.75rem;
+    background: var(--surface-navy);
+    border: 1px solid var(--border-subtle);
+    border-radius: 0.6rem;
+  }
+
+  .activity-card p {
+    margin-bottom: 0;
+  }
+
+  .activity-card-availability {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+</style>

@@ -1,0 +1,104 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SourceNote from "../components/SourceNote.astro";
+import { START_HERE_FAQ } from "../data/faq";
+import { CAS_SOURCES } from "../data/sources";
+---
+
+<BaseLayout
+  title="Start Here | Canberra Astronomical Society — Student Redesign"
+  description="What a beginner can expect at a first CAS meeting — no telescope or experience required, and no obligation to join."
+  active="start-here"
+>
+  <div class="container section">
+    <p class="meta-label">Start here</p>
+    <h1>Curious is enough.</h1>
+    <p class="prose lede">
+      No telescope required. CAS welcomes beginners as well as experienced
+      astronomers, and coming along doesn't commit you to anything.
+    </p>
+  </div>
+
+  <section class="container section">
+    <h2>Your first CAS meeting</h2>
+    <ol class="step-list">
+      <li>Check the official calendar for the next meeting date.</li>
+      <li>Choose a meeting to attend.</li>
+      <li>Arrive as a prospective visitor — no membership needed yet.</li>
+      <li>Introduce yourself to a member when you arrive.</li>
+      <li>Decide later whether to join.</li>
+    </ol>
+    <p>
+      <SourceNote href={CAS_SOURCES.calendar}>Check the official calendar</SourceNote>
+    </p>
+  </section>
+
+  <section class="section meeting-includes">
+    <div class="container">
+      <h2>What a meeting may include</h2>
+      <ul class="plain-list">
+        <li>A skills session</li>
+        <li>A talk or presentation</li>
+        <li>Conversation with other observers</li>
+        <li>Telescope observing, when conditions and arrangements permit</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="container section">
+    <h2>Beginner FAQ</h2>
+    <dl class="faq-list">
+      {START_HERE_FAQ.map((entry) => (
+        <>
+          <dt>{entry.question}</dt>
+          <dd>{entry.answer}</dd>
+        </>
+      ))}
+    </dl>
+  </section>
+
+  <section class="container section join-cta">
+    <a class="button button-primary" href={CAS_SOURCES.join} rel="noopener">
+      Go to the official joining page<span class="external-link-icon" aria-hidden="true">↗</span>
+    </a>
+  </section>
+</BaseLayout>
+
+<style>
+  .section {
+    padding-block: var(--space-section);
+  }
+
+  .lede {
+    font-size: var(--step-lede);
+    color: var(--text-muted);
+  }
+
+  .meeting-includes {
+    background: var(--surface-navy);
+  }
+
+  .step-list,
+  .plain-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 68ch;
+    padding-inline-start: 1.25rem;
+  }
+
+  .faq-list dt {
+    margin-top: 1.25rem;
+    font-weight: 600;
+  }
+
+  .faq-list dd {
+    max-width: 68ch;
+    margin: 0.35rem 0 0;
+    color: var(--text-muted);
+  }
+
+  .join-cta {
+    text-align: center;
+  }
+</style>

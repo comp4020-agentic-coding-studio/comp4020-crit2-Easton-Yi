@@ -1,0 +1,98 @@
+---
+type NavKey = "home" | "observe" | "start-here" | "about";
+
+interface Props {
+  active: NavKey;
+}
+
+const { active } = Astro.props;
+
+const links: { key: NavKey; href: string; label: string }[] = [
+  { key: "home", href: "index.html", label: "Home" },
+  { key: "observe", href: "observe.html", label: "Observe" },
+  { key: "start-here", href: "start-here.html", label: "Start Here" },
+  { key: "about", href: "about.html", label: "About & Join" },
+];
+---
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="wordmark" href="index.html">
+      <span aria-hidden="true">✦</span> Canberra Astronomical Society
+    </a>
+    <nav class="primary-nav" aria-label="Primary">
+      <ul>
+        {
+          links.map((link) => (
+            <li>
+              <a href={link.href} aria-current={link.key === active ? "page" : undefined}>
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    border-bottom: 1px solid var(--border-subtle);
+    background: var(--surface-navy);
+  }
+
+  .site-header__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-block: 1rem;
+  }
+
+  .wordmark {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .wordmark span {
+    color: var(--accent-amber);
+  }
+
+  .wordmark:hover {
+    color: var(--accent-amber);
+  }
+
+  .primary-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .primary-nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding-inline: 0.5rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .primary-nav a:hover {
+    color: var(--accent-amber);
+  }
+
+  .primary-nav a[aria-current="page"] {
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--accent-amber);
+  }
+</style>

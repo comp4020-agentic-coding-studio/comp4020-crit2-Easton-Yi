@@ -1,0 +1,36 @@
+---
+// The checked date tracks docs/CONTENT_SOURCES.md's audit date; update both
+// together when facts are reverified.
+const CONTENT_CHECKED = "8 August 2026";
+---
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <p>
+      An unsolicited student redesign created for COMP4020. This is not the
+      official Canberra Astronomical Society website. For current events,
+      membership and contact information, visit the
+      <a href="https://casastronomy.org.au/" rel="noopener">
+        official CAS website<span class="external-link-icon" aria-hidden="true">↗</span>
+      </a>.
+    </p>
+    <p class="meta-label">Content last checked: {CONTENT_CHECKED}</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--border-subtle);
+    margin-top: var(--space-section);
+  }
+
+  .site-footer__inner {
+    padding-block: 2rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  .site-footer__inner p {
+    max-width: 60ch;
+  }
+</style>

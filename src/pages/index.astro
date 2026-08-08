@@ -1,20 +1,17 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<Layout title="COMP4020 prototype">
-  <header>
-    <nav aria-label="Primary">
-      <a href="./">Home</a>
-    </nav>
-  </header>
-  <main>
-    <h1>COMP4020 prototype</h1>
-    <p data-testid="intro">
-      Replace this with your prototype. This week's brief is on the course
-      website; <code>spec/README.md</code> explains how the checks in this repo
-      relate to it.
+<BaseLayout
+  title="Canberra Astronomical Society — Student Redesign"
+  description="An unsolicited student redesign of the Canberra Astronomical Society website, organised around what a new visitor wants to do: observe, learn, visit and join."
+  active="home"
+>
+  <div class="container">
+    <h1>Look up, Canberra.</h1>
+    <p class="prose">
+      Homepage content lands in the next stage — hero, action cards and the
+      beginner reassurance section described in the project brief.
     </p>
-  </main>
-  <script src="../scripts/main.ts"></script>
-</Layout>
+  </div>
+</BaseLayout>

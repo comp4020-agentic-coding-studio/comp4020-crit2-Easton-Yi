@@ -160,3 +160,18 @@ catching you out, a fact about the stack the agent keeps getting wrong --- write
 it down here. Growing this file is the work of harness engineering, and the gap
 between this boilerplate and your own version is part of what your prototype
 says about the developer you're becoming.
+
+## Crit 2 project references
+
+**Note:** Brain_storming.md is just for me to open mind, and is not(should not) be referenced during project implementation anymore further. Ignore it.
+
+Before planning or implementing the site, read:
+
+- `docs/PROJECT_BRIEF.md` — authoritative redesign, content and implementation brief
+- `docs/CONTENT_SOURCES.md` — verified facts, URLs, image licences and check dates
+
+Use `docs/CRIT_QA_NOTES.md` only when working on `PROCESS.md`,
+`reflections/crit-2.md`, design rationale or crit preparation.
+
+Do not invent facts, events, user experiences or agent corrections.
+The repository starter contract and course checks take precedence.

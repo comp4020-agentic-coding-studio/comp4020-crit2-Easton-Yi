@@ -1,0 +1,29 @@
+---
+import SourceNote from "./SourceNote.astro";
+
+interface Props {
+  heading: string;
+  calendarHref: string;
+}
+const { heading, calendarHref } = Astro.props;
+---
+
+<section class="location-panel">
+  <div class="container">
+    <p class="meta-label">Meeting location</p>
+    <h2>{heading}</h2>
+    <div class="prose">
+      <slot />
+    </div>
+    <p>
+      <SourceNote href={calendarHref}>Check the official CAS calendar</SourceNote>
+    </p>
+  </div>
+</section>
+
+<style>
+  .location-panel {
+    padding-block: var(--space-section);
+    background: var(--surface-navy);
+  }
+</style>

@@ -33,7 +33,14 @@ Filled in as each fact is written into a page. `Source` links to a row above.
 
 | Fact (as stated on site) | Source  | Checked    | Status   |
 | ------------------------- | ------- | ---------- | -------- |
-| _(none yet)_              |         |            |          |
+| Beginners and experienced astronomers are both welcome; no telescope required to take part | About | 2026-08-08 | stable |
+| CAS runs monthly meetings associated with Mt Stromlo | About / Outreach | 2026-08-08 | stable |
+| Meetings mix skills sessions and astronomy presentations | About | 2026-08-08 | stable |
+| CAS is connected to ANU's Research School of Astronomy and Astrophysics at Mt Stromlo | About / Mt Stromlo public astronomy (ANU/RSAA) | 2026-08-08 | stable |
+| CAS runs public stargazing nights and school outreach | Outreach | 2026-08-08 | stable |
+| Members have access to dark-sky observing activities | About | 2026-08-08 | stable |
+| Prospective visitors can attend a meeting without joining first | About / Join | 2026-08-08 | stable |
+| Current meeting dates and access details — link to official calendar rather than stating a date | Calendar | 2026-08-08 | changing |
 
 ## Image licences
 

@@ -1,4 +1,7 @@
 ---
+import SourceNote from "./SourceNote.astro";
+import { CAS_SOURCES } from "../data/sources";
+
 // The checked date tracks docs/CONTENT_SOURCES.md's audit date; update both
 // together when facts are reverified.
 const CONTENT_CHECKED = "8 August 2026";
@@ -10,9 +13,7 @@ const CONTENT_CHECKED = "8 August 2026";
       An unsolicited student redesign created for COMP4020. This is not the
       official Canberra Astronomical Society website. For current events,
       membership and contact information, visit the
-      <a href="https://casastronomy.org.au/" rel="noopener">
-        official CAS website<span class="external-link-icon" aria-hidden="true">↗</span>
-      </a>.
+      <SourceNote href={CAS_SOURCES.home}>official CAS website</SourceNote>.
     </p>
     <p class="meta-label">Content last checked: {CONTENT_CHECKED}</p>
   </div>

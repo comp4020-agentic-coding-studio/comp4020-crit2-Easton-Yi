@@ -1,0 +1,37 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  href: string;
+  linkLabel: string;
+}
+const { title, description, href, linkLabel } = Astro.props;
+---
+
+<article class="action-card">
+  <h3>{title}</h3>
+  <p>{description}</p>
+  <a class="action-card-link" href={href}>{linkLabel}</a>
+</article>
+
+<style>
+  .action-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.75rem;
+    background: var(--surface-navy);
+    border: 1px solid var(--border-subtle);
+    border-radius: 0.6rem;
+  }
+
+  .action-card p {
+    flex-grow: 1;
+    color: var(--text-muted);
+    margin-bottom: 0;
+  }
+
+  .action-card-link {
+    font-weight: 600;
+  }
+</style>

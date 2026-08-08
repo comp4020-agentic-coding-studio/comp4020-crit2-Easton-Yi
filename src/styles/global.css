@@ -100,6 +100,44 @@ img {
   margin-inline-start: 0.15em;
 }
 
+.cards-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding-inline: 1.25rem;
+  border: 2px solid transparent;
+  border-radius: 0.4rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.button-primary {
+  background: var(--accent-amber);
+  color: var(--bg-deep);
+}
+
+.button-primary:hover {
+  background: var(--accent-red);
+  color: var(--bg-deep);
+}
+
+.button-secondary {
+  border-color: var(--border-subtle);
+  color: var(--text-primary);
+}
+
+.button-secondary:hover {
+  border-color: var(--accent-amber);
+  color: var(--accent-amber);
+}
+
 /* Skip link: first focusable element, off-screen until keyboard focus */
 .skip-link {
   position: absolute;

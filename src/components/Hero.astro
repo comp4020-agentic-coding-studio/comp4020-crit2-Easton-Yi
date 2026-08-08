@@ -1,0 +1,94 @@
+---
+interface Cta {
+  label: string;
+  href: string;
+}
+interface Props {
+  eyebrow: string;
+  headline: string;
+  lede: string;
+  primaryCta: Cta;
+  secondaryCta: Cta;
+}
+const { eyebrow, headline, lede, primaryCta, secondaryCta } = Astro.props;
+---
+
+<section class="hero">
+  <svg class="hero-motif" viewBox="0 0 400 300" aria-hidden="true" focusable="false">
+    <path d="M0 260 Q200 180 400 260" class="hero-motif-horizon"></path>
+    <circle class="hero-motif-star" cx="60" cy="60" r="2"></circle>
+    <circle class="hero-motif-star" cx="120" cy="40" r="1.5"></circle>
+    <circle class="hero-motif-star" cx="180" cy="90" r="2"></circle>
+    <circle class="hero-motif-star" cx="260" cy="50" r="1.5"></circle>
+    <circle class="hero-motif-star" cx="320" cy="80" r="2"></circle>
+    <polyline
+      points="60,60 120,40 180,90 260,50 320,80"
+      class="hero-motif-line"></polyline>
+  </svg>
+  <div class="container hero-content">
+    <p class="meta-label">{eyebrow}</p>
+    <h1>{headline}</h1>
+    <p class="prose hero-lede">{lede}</p>
+    <div class="hero-ctas">
+      <a class="button button-primary" href={primaryCta.href}>{primaryCta.label}</a>
+      <a class="button button-secondary" href={secondaryCta.href}>{secondaryCta.label}</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--surface-navy), var(--bg-deep));
+  }
+
+  .hero-motif {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.35;
+    pointer-events: none;
+  }
+
+  .hero-motif-horizon {
+    fill: none;
+    stroke: var(--border-subtle);
+    stroke-width: 1.5;
+  }
+
+  .hero-motif-star {
+    fill: var(--accent-blue);
+  }
+
+  .hero-motif-line {
+    fill: none;
+    stroke: var(--accent-blue);
+    stroke-width: 1;
+    opacity: 0.6;
+  }
+
+  .hero-content {
+    position: relative;
+    padding-block: var(--space-section);
+  }
+
+  .hero-lede {
+    font-size: var(--step-lede);
+    color: var(--text-muted);
+  }
+
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  @media (max-width: 30rem) {
+    .hero-motif {
+      display: none;
+    }
+  }
+</style>

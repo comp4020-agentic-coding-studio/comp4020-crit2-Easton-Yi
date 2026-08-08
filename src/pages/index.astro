@@ -1,5 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import ActionCard from "../components/ActionCard.astro";
+import LocationPanel from "../components/LocationPanel.astro";
+import { CAS_SOURCES } from "../data/sources";
 ---
 
 <BaseLayout
@@ -7,11 +11,99 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   description="An unsolicited student redesign of the Canberra Astronomical Society website, organised around what a new visitor wants to do: observe, learn, visit and join."
   active="home"
 >
-  <div class="container">
-    <h1>Look up, Canberra.</h1>
+  <Hero
+    eyebrow="Canberra Astronomical Society"
+    headline="Look up, Canberra."
+    lede="CAS brings together curious beginners and experienced observers to explore the night sky together — public stargazing, monthly meetings, and a long-running connection to Mt Stromlo."
+    primaryCta={{ label: "Start here", href: "start-here.html" }}
+    secondaryCta={{ label: "Explore observing", href: "observe.html" }}
+  />
+
+  <section class="container section">
+    <h2>Three ways to start</h2>
+    <div class="cards-grid">
+      <ActionCard
+        title="Observe the sky"
+        description="See the ways CAS gets Canberra looking up, from public stargazing nights to members' dark-sky observing."
+        href="observe.html"
+        linkLabel="See how to observe"
+      />
+      <ActionCard
+        title="Attend a meeting"
+        description="New to CAS? Meetings are open to prospective visitors — no membership or equipment required to come along."
+        href="start-here.html"
+        linkLabel="Plan your first visit"
+      />
+      <ActionCard
+        title="Join the community"
+        description="Ready to join? Beginners and experienced astronomers are both welcome — see what membership involves."
+        href="about.html"
+        linkLabel="About & Join"
+      />
+    </div>
+  </section>
+
+  <section class="container section">
+    <h2>No telescope required.</h2>
     <p class="prose">
-      Homepage content lands in the next stage — hero, action cards and the
-      beginner reassurance section described in the project brief.
+      Curiosity is enough to begin. CAS welcomes beginners as well as
+      experienced astronomers, and owning a telescope isn't a condition of
+      taking part.
     </p>
-  </div>
+  </section>
+
+  <section class="container section">
+    <h2>What CAS does</h2>
+    <div class="cards-grid">
+      <div>
+        <h3>Observe</h3>
+        <p>
+          Public stargazing and members' dark-sky nights bring the night sky
+          to newcomers and regulars alike.
+        </p>
+      </div>
+      <div>
+        <h3>Learn</h3>
+        <p>
+          Monthly meetings mix skills sessions and astronomy presentations,
+          alongside CAS's connection with ANU's Research School of Astronomy
+          and Astrophysics at Mt Stromlo.
+        </p>
+      </div>
+      <div>
+        <h3>Share</h3>
+        <p>
+          School visits and community outreach carry that knowledge beyond
+          the Society's own meetings.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <LocationPanel
+    heading="Meetings are held at Mt Stromlo."
+    calendarHref={CAS_SOURCES.calendar}
+  >
+    <p>
+      CAS's monthly meetings are associated with Mt Stromlo, home to ANU's
+      Research School of Astronomy and Astrophysics. Dates and access details
+      can change, so confirm before you travel.
+    </p>
+  </LocationPanel>
+
+  <section class="container section">
+    <h2>Why CAS matters</h2>
+    <p class="prose">
+      CAS connects amateur astronomy in Canberra with the professional
+      research under way at Mt Stromlo — turning specialist knowledge into
+      public stargazing nights, school outreach, and a standing invitation for
+      anyone curious about the sky.
+    </p>
+  </section>
 </BaseLayout>
+
+<style>
+  .section {
+    padding-block: var(--space-section);
+  }
+</style>

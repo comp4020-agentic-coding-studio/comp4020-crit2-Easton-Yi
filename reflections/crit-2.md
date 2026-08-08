@@ -1,5 +1,7 @@
 # Crit 2 reflection
 
+**The deployed URL:** https://comp4020-agentic-coding-studio.github.io/comp4020-crit2-Easton-Yi/
+
 **The breakthrough.** `pnpm check` going green kept feeling like proof the
 site was done, but it doesn't touch accessibility or responsive behaviour at
 all — that gap is exactly what CLAUDE.md warns about. The shift was realising

@@ -38,4 +38,11 @@ const { title, audience, description, officialUrl, availability } = Astro.props;
     color: var(--text-muted);
     font-size: 0.9rem;
   }
+
+  .activity-card :global(> a) {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    font-weight: 600;
+  }
 </style>

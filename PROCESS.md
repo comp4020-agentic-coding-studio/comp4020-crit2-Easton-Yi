@@ -138,9 +138,25 @@ normal text
 `pnpm check` (typecheck → build → oxlint → stylelint → vitest) is green: 0
 type errors, a clean build, 0 lint errors, 33/33 tests passing. Full-page
 screenshots at both graded viewports (1920×1080, 390×844) were taken and
-reviewed for all four pages after the Stage 7 changes. Internal link/deploy
-verification (`pnpm dlx linkinator ./dist`, the live GitHub Pages URL) is the
-remaining Stage 9 step and will be recorded here once run.
+reviewed for all four pages after the Stage 7 changes, then re-checked against
+the live deployed URL below.
+
+Deploying surfaced one real gap: GitHub Pages had never been enabled on this
+repo, so the first CI run's `deploy` job failed at `configure-pages` with
+"Get Pages site failed... Not Found." Enabling Pages with the Actions build
+type fixed it, and the rerun went green
+([`58a601e`](https://github.com/comp4020-agentic-coding-studio/comp4020-crit2-Easton-Yi/commit/58a601e)).
+The live site — <https://comp4020-agentic-coding-studio.github.io/comp4020-crit2-Easton-Yi/>
+— was then independently verified rather than assumed correct from a green
+CI badge: all four pages return HTTP 200, `linkinator` run against the live
+URL (all four pages, `--recurse`) scanned 20 links with 0 broken — the same
+total and same zero found against a locally-mounted `dist/` served under the
+matching `/comp4020-crit2-Easton-Yi/` subpath, which is the specific failure
+mode CLAUDE.md warns about (a base-path misconfiguration that "looks fine
+locally while every asset 404s on the live URL") — and full-page screenshots
+at both graded viewports were re-taken against the live URL for all four
+pages, confirming imagery, layout and the hero motif render correctly with no
+asset breakage beyond the site's own build.
 
 ## 17. Remaining limitations
 
@@ -148,5 +164,4 @@ This is a static student concept, not a production replacement for CAS's
 live site: no live event data, member accounts, payments or backend of any
 kind. Anywhere a visitor needs current information (meeting dates, joining,
 contact), the site links to the official CAS pages rather than restating
-them. As of this commit the site has not yet been deployed to GitHub Pages
-and independently verified at the public URL — that verification is Stage 9.
+them.

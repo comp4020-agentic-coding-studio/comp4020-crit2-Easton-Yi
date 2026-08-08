@@ -4,6 +4,7 @@ import Hero from "../components/Hero.astro";
 import ActionCard from "../components/ActionCard.astro";
 import LocationPanel from "../components/LocationPanel.astro";
 import { CAS_SOURCES } from "../data/sources";
+import visitorCentre from "../assets/images/visitor-centre.jpg";
 ---
 
 <BaseLayout
@@ -83,12 +84,23 @@ import { CAS_SOURCES } from "../data/sources";
   <LocationPanel
     heading="Meetings are held at Mt Stromlo."
     calendarHref={CAS_SOURCES.calendar}
+    image={visitorCentre}
+    imageAlt="The Mount Stromlo Observatory visitor centre building, seen from outside."
   >
     <p>
       CAS's monthly meetings are associated with Mt Stromlo, home to ANU's
       Research School of Astronomy and Astrophysics. Dates and access details
       can change, so confirm before you travel.
     </p>
+    <Fragment slot="credit">
+      Mount Stromlo Observatory visitor centre — Robert Myers, <a
+        href="https://creativecommons.org/licenses/by-sa/3.0/au/"
+        rel="noopener">CC BY-SA 3.0 AU</a
+      >, via <a
+        href="https://commons.wikimedia.org/wiki/File:Mount_Stromlo_Observatory_visitor_centre.jpg"
+        rel="noopener">Wikimedia Commons</a
+      >
+    </Fragment>
   </LocationPanel>
 
   <section class="container section">

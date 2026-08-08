@@ -56,14 +56,19 @@ Filled in as images are sourced and committed. See `docs/PROJECT_BRIEF.md`
 §9 for requirements (local storage, `file`-validated, meaningful alt text,
 recorded title/creator/source/licence).
 
-Approved candidates, not yet downloaded — `Local path` fills in once each is
-fetched, `file`-validated and committed:
+Downloaded via each file's Wikimedia Commons `Special:FilePath` redirect
+(1600px-wide rendition), validated with the system `file` command against the
+actual bytes (not the extension) before being committed — see the commands
+and output logged in `PROCESS.md`. Each is used once, with a visible on-page
+credit linking to its licence and Commons source page, and resized via
+Astro's built-in `astro:assets` image pipeline (`<Image>`), which also
+optimises file size for the deployed site.
 
-| Local path   | Title                                                | Creator      | Source URL                                                                                             | Licence         | Checked    |
-| ------------ | ----------------------------------------------------- | ------------ | -------------------------------------------------------------------------------------------------------- | ---------------- | ---------- |
-| _(pending)_  | The Outreach Telescope Domes, Mt Stromlo Observatory  | Tim Vines    | https://commons.wikimedia.org/wiki/File:The_Outreach_Telescope_Domes,_Mt_Stromlo_Observatory.png         | CC BY-SA 4.0     | 2026-08-08 |
-| _(pending)_  | Mount Stromlo Observatory visitor centre              | Robert Myers | https://commons.wikimedia.org/wiki/File:Mount_Stromlo_Observatory_visitor_centre.jpg                     | CC BY-SA 3.0 AU  | 2026-08-08 |
-| _(pending)_  | Mt Stromlo Observatory.jpg (74-inch telescope)        | Groo768      | https://commons.wikimedia.org/wiki/File:Mt_Stromlo_Observatory.jpg                                        | CC BY-SA 3.0     | 2026-08-08 |
+| Local path                              | Title                                                | Creator      | Source URL                                                                                             | Licence         | Checked    | Used on |
+| ---------------------------------------- | ----------------------------------------------------- | ------------ | -------------------------------------------------------------------------------------------------------- | ---------------- | ---------- | ------- |
+| src/assets/images/outreach-domes.png     | The Outreach Telescope Domes, Mt Stromlo Observatory  | Tim Vines    | https://commons.wikimedia.org/wiki/File:The_Outreach_Telescope_Domes,_Mt_Stromlo_Observatory.png         | CC BY-SA 4.0     | 2026-08-08 | Observe |
+| src/assets/images/visitor-centre.jpg     | Mount Stromlo Observatory visitor centre              | Robert Myers | https://commons.wikimedia.org/wiki/File:Mount_Stromlo_Observatory_visitor_centre.jpg                     | CC BY-SA 3.0 AU  | 2026-08-08 | Home    |
+| src/assets/images/telescope.jpg          | Mt Stromlo Observatory.jpg (74-inch telescope)        | Groo768      | https://commons.wikimedia.org/wiki/File:Mt_Stromlo_Observatory.jpg                                        | CC BY-SA 3.0     | 2026-08-08 | About   |
 
 Hero/decorative treatment: a hand-drawn CSS/SVG constellation-and-horizon
 motif, not a photo — avoids the "generic space startup" look the brief warns

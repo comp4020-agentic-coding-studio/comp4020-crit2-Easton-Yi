@@ -1,7 +1,9 @@
 ---
+import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SourceNote from "../components/SourceNote.astro";
 import { CAS_SOURCES } from "../data/sources";
+import telescope from "../assets/images/telescope.jpg";
 ---
 
 <BaseLayout
@@ -20,16 +22,35 @@ import { CAS_SOURCES } from "../data/sources";
   </div>
 
   <section class="section observatory">
-    <div class="container">
-      <h2>Between community and observatory</h2>
-      <p class="prose">
-        CAS sits between the Canberra community and Mt Stromlo. The Society
-        promotes cooperation between amateur and professional astronomers,
-        and keeps close ties with ANU's Research School of Astronomy and
-        Astrophysics at Mt Stromlo — some RSAA staff are CAS members
-        themselves. That connection carries into public education and
-        outreach programs that bring it to schools and the wider community.
-      </p>
+    <div class="container observatory-grid">
+      <div>
+        <h2>Between community and observatory</h2>
+        <p class="prose">
+          CAS sits between the Canberra community and Mt Stromlo. The Society
+          promotes cooperation between amateur and professional astronomers,
+          and keeps close ties with ANU's Research School of Astronomy and
+          Astrophysics at Mt Stromlo — some RSAA staff are CAS members
+          themselves. That connection carries into public education and
+          outreach programs that bring it to schools and the wider community.
+        </p>
+      </div>
+      <figure class="observatory-figure">
+        <Image
+          src={telescope}
+          alt="The 74-inch telescope dome at Mt Stromlo Observatory."
+          width={640}
+          loading="eager"
+        />
+        <figcaption>
+          Mt Stromlo Observatory — Groo768, <a
+            href="https://creativecommons.org/licenses/by-sa/3.0/"
+            rel="noopener">CC BY-SA 3.0</a
+          >, via <a
+            href="https://commons.wikimedia.org/wiki/File:Mt_Stromlo_Observatory.jpg"
+            rel="noopener">Wikimedia Commons</a
+          >
+        </figcaption>
+      </figure>
     </div>
   </section>
 
@@ -104,6 +125,31 @@ import { CAS_SOURCES } from "../data/sources";
   .observatory,
   .try-before {
     background: var(--surface-navy);
+  }
+
+  .observatory-grid {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+    grid-template-columns: 1fr;
+  }
+
+  .observatory-figure img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.6rem;
+  }
+
+  .observatory-figure figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  @media (min-width: 60rem) {
+    .observatory-grid {
+      grid-template-columns: 3fr 2fr;
+    }
   }
 
   .benefit p {

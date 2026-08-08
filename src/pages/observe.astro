@@ -1,10 +1,12 @@
 ---
+import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ActionCard from "../components/ActionCard.astro";
 import ActivityCard from "../components/ActivityCard.astro";
 import SourceNote from "../components/SourceNote.astro";
 import { ACTIVITIES } from "../data/activities";
 import { CAS_SOURCES } from "../data/sources";
+import outreachDomes from "../assets/images/outreach-domes.png";
 ---
 
 <BaseLayout
@@ -21,6 +23,24 @@ import { CAS_SOURCES } from "../data/sources";
       source to check.
     </p>
   </div>
+
+  <figure class="container section observe-figure">
+    <Image
+      src={outreachDomes}
+      alt="The outreach telescope domes at Mt Stromlo Observatory under a blue sky."
+      width={1100}
+      loading="eager"
+    />
+    <figcaption>
+      The Outreach Telescope Domes, Mt Stromlo Observatory — Tim Vines, <a
+        href="https://creativecommons.org/licenses/by-sa/4.0/"
+        rel="noopener">CC BY-SA 4.0</a
+      >, via <a
+        href="https://commons.wikimedia.org/wiki/File:The_Outreach_Telescope_Domes,_Mt_Stromlo_Observatory.png"
+        rel="noopener">Wikimedia Commons</a
+      >
+    </figcaption>
+  </figure>
 
   <section class="container section">
     <h2>Activities</h2>
@@ -87,5 +107,21 @@ import { CAS_SOURCES } from "../data/sources";
 
   .calendar-cta {
     text-align: center;
+  }
+
+  .observe-figure {
+    margin: 0;
+  }
+
+  .observe-figure img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.6rem;
+  }
+
+  .observe-figure figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
   }
 </style>

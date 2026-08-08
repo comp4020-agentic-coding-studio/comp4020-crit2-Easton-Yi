@@ -1,23 +1,39 @@
 ---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
 import SourceNote from "./SourceNote.astro";
 
 interface Props {
   heading: string;
   calendarHref: string;
+  image: ImageMetadata;
+  imageAlt: string;
 }
-const { heading, calendarHref } = Astro.props;
+const { heading, calendarHref, image, imageAlt } = Astro.props;
 ---
 
 <section class="location-panel">
-  <div class="container">
-    <p class="meta-label">Meeting location</p>
-    <h2>{heading}</h2>
-    <div class="prose">
-      <slot />
+  <div class="container location-panel-grid">
+    <div>
+      <p class="meta-label">Meeting location</p>
+      <h2>{heading}</h2>
+      <div class="prose">
+        <slot />
+      </div>
+      <p>
+        <SourceNote href={calendarHref}>Check the official CAS calendar</SourceNote>
+      </p>
     </div>
-    <p>
-      <SourceNote href={calendarHref}>Check the official CAS calendar</SourceNote>
-    </p>
+    <figure class="location-panel-figure">
+      <Image
+        src={image}
+        alt={imageAlt}
+        width={640}
+        loading="eager"
+        class="location-panel-image"
+      />
+      <figcaption><slot name="credit" /></figcaption>
+    </figure>
   </div>
 </section>
 
@@ -25,5 +41,34 @@ const { heading, calendarHref } = Astro.props;
   .location-panel {
     padding-block: var(--space-section);
     background: var(--surface-navy);
+  }
+
+  .location-panel-grid {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+    grid-template-columns: 1fr;
+  }
+
+  .location-panel-figure {
+    margin: 0;
+  }
+
+  .location-panel-image {
+    width: 100%;
+    height: auto;
+    border-radius: 0.6rem;
+  }
+
+  .location-panel-figure figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  @media (min-width: 60rem) {
+    .location-panel-grid {
+      grid-template-columns: 3fr 2fr;
+    }
   }
 </style>

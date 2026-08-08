@@ -41,6 +41,14 @@ Filled in as each fact is written into a page. `Source` links to a row above.
 | Members have access to dark-sky observing activities | About | 2026-08-08 | stable |
 | Prospective visitors can attend a meeting without joining first | About / Join | 2026-08-08 | stable |
 | Current meeting dates and access details — link to official calendar rather than stating a date | Calendar | 2026-08-08 | changing |
+| CAS was established in 1969 and serves the ACT and surrounding regions | About | 2026-08-08 | stable |
+| "You do not need a telescope to join" | About | 2026-08-08 | stable |
+| CAS promotes cooperation between amateur and professional astronomers; some RSAA staff are also CAS members | About | 2026-08-08 | stable |
+| CAS publishes a monthly newsletter (Southern Cross) and annual Ephemeris, free to members | About / Join | 2026-08-08 | stable |
+| Monthly meetings feature a skills session plus a talk from a professional or amateur astronomer | Join | 2026-08-08 | stable |
+| Non-members may attend up to two meetings before being asked to join | Join | 2026-08-08 | stable |
+| A membership form and payment options exist on the official Join page (not reproduced here) | Join | 2026-08-08 | stable |
+| Official contact page lists committee roles; personal phone numbers are not reproduced on the redesign | Contact | 2026-08-08 | stable |
 
 ## Image licences
 

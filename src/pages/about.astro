@@ -1,0 +1,126 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SourceNote from "../components/SourceNote.astro";
+import { CAS_SOURCES } from "../data/sources";
+---
+
+<BaseLayout
+  title="About & Join | Canberra Astronomical Society — Student Redesign"
+  description="Who CAS is, how it connects amateur and professional astronomy at Mt Stromlo, what membership includes, and how to join through the official CAS process."
+  active="about"
+>
+  <div class="container section">
+    <p class="meta-label">Since 1969</p>
+    <h1>About CAS — and how to join</h1>
+    <p class="prose lede">
+      The Canberra Astronomical Society was established in 1969 and has
+      served amateur astronomers in the ACT and surrounding regions ever
+      since.
+    </p>
+  </div>
+
+  <section class="section observatory">
+    <div class="container">
+      <h2>Between community and observatory</h2>
+      <p class="prose">
+        CAS sits between the Canberra community and Mt Stromlo. The Society
+        promotes cooperation between amateur and professional astronomers,
+        and keeps close ties with ANU's Research School of Astronomy and
+        Astrophysics at Mt Stromlo — some RSAA staff are CAS members
+        themselves. That connection carries into public education and
+        outreach programs that bring it to schools and the wider community.
+      </p>
+    </div>
+  </section>
+
+  <section class="container section">
+    <h2>What membership includes</h2>
+    <div class="cards-grid">
+      <div class="benefit">
+        <h3>Meetings</h3>
+        <p>Monthly meetings, each with a skills session alongside the talk below.</p>
+      </div>
+      <div class="benefit">
+        <h3>Presentations</h3>
+        <p>A talk each meeting from a professional or amateur astronomer.</p>
+      </div>
+      <div class="benefit">
+        <h3>Observing opportunities</h3>
+        <p>Access to members' dark-sky viewing nights away from city lights.</p>
+      </div>
+      <div class="benefit">
+        <h3>Member publication</h3>
+        <p>The monthly <em>Southern Cross</em> newsletter and an annual Ephemeris, free to members.</p>
+      </div>
+      <div class="benefit">
+        <h3>Community</h3>
+        <p>A community of beginners through experienced astronomers, and a role in CAS's public outreach.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section try-before">
+    <div class="container">
+      <p class="meta-label">Try before you join</p>
+      <h2>No obligation to your first two meetings</h2>
+      <p class="prose">
+        Non-members can attend up to two meetings before being asked to
+        join — a chance to see whether CAS is a good fit before committing.
+      </p>
+    </div>
+  </section>
+
+  <section class="container section join-section">
+    <h2>Ready to join?</h2>
+    <p class="prose">
+      The membership form and payment options are handled on CAS's own
+      site — this redesign doesn't reproduce them.
+    </p>
+    <div class="cta-row">
+      <a class="button button-primary" href={CAS_SOURCES.join} rel="noopener">
+        Go to the official joining page<span class="external-link-icon" aria-hidden="true">↗</span>
+      </a>
+      <a class="button button-secondary" href={CAS_SOURCES.contact} rel="noopener">
+        Official contact details<span class="external-link-icon" aria-hidden="true">↗</span>
+      </a>
+    </div>
+    <p class="prose contact-note">
+      For committee and outreach contacts, see the
+      <SourceNote href={CAS_SOURCES.contact}>official CAS contact page</SourceNote>.
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .section {
+    padding-block: var(--space-section);
+  }
+
+  .lede {
+    font-size: var(--step-lede);
+    color: var(--text-muted);
+  }
+
+  .observatory,
+  .try-before {
+    background: var(--surface-navy);
+  }
+
+  .benefit p {
+    color: var(--text-muted);
+    margin-bottom: 0;
+  }
+
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .contact-note {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+</style>
